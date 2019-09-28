@@ -33,6 +33,8 @@ getorretrieve = function(url) {
 
 historyhtml = leagues %>% 
   mutate(html = map(url, getorretrieve)) 
+
+historyhtml
   
 szns = historyhtml %>% 
   mutate(sznshtml = map(html, ~.x %>% html_nodes('[data-stat="season"] a')),
@@ -99,12 +101,17 @@ js = parsed %>%
 js
 # cat(js$outputjs[2])
 
+# szn = js$szn[5]
+# code2 = js$code2[5]
+# outputjs = js$outputjs[5]
+
 writejs <- function(szn, code2, outputjs) {
   outputdir = here('leaguetables', 'js', szn)
   if (!dir.exists(outputdir)) { dir.create(outputdir) }
   fname = str_c(code2, '.js')
-  outputfile = here('leaguetables', 'js', szn, outputfname)
+  outputfile = here('leaguetables', 'js', szn, fname)
   cat(outputjs, file = outputfile)
 }
 
+# writejs(szn, code2, outputjs)
 pwalk(js, writejs)
