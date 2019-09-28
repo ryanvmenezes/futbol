@@ -93,7 +93,8 @@ js = parsed %>%
   mutate(code2 = code_string) %>% 
   group_by(szn, code2) %>% 
   nest() %>% 
-  mutate(outputjs = map_chr(data, formatjs))
+  mutate(outputjs = map_chr(data, formatjs)) %>% 
+  select(-data)
 
 js
 # cat(js$outputjs[2])
@@ -101,7 +102,9 @@ js
 writejs <- function(szn, code2, outputjs) {
   outputdir = here('leaguetables', 'js', szn)
   if (!dir.exists(outputdir)) { dir.create(outputdir) }
-  cat(outputjs, file = here('leaguetables','js',szn, str_c(code2, '.js')))
+  fname = str_c(code2, '.js')
+  outputfile = here('leaguetables', 'js', szn, outputfname)
+  cat(outputjs, file = outputfile)
 }
 
 pwalk(js, writejs)
