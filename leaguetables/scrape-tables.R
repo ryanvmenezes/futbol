@@ -40,6 +40,8 @@ szns = historyhtml %>%
          szn = map(sznshtml, ~.x %>% html_text()),
          source = map(sznshtml, ~.x %>% html_attr('href') %>% str_c('https://fbref.com', .)))
 
+szns
+
 sznshtml = szns %>% 
   select(-url, -html,-sznshtml) %>% 
   unnest() %>% 
@@ -58,11 +60,11 @@ parsed = sznshtml %>%
                       mutate(difference = as.character(difference))),
     cl = map(table,
              ~.x %>% 
-               filter(str_detect(Notes, 'Champions League')) %>% 
+               filter(str_detect(Notes, 'UEFA Champions League')) %>% 
                pull(Rk)),
     el = map(table,
              ~.x %>% 
-               filter(str_detect(Notes, 'Europa League|UEFA Cup')) %>% 
+               filter(str_detect(Notes, 'UEFA Europa League|UEFA Cup')) %>% 
                pull(Rk)),
     relegated = map(table,
                     ~.x %>% 
@@ -76,15 +78,18 @@ parsed
 
 formatjs <- function(s) {
   l = s %>% as.list()
+  # bring these one level up
   l$cl = l$cl[[1]]
   l$el = l$el[[1]]
   l$relegated = l$relegated[[1]]
   l$standings = l$standings[[1]]
+  # meet the cann tables specification
   string = l %>% 
     jsonlite::toJSON(pretty = TRUE, auto_unbox = TRUE) %>%
     as.character() %>% 
     str_split('\n') %>% 
     first()
+  # manually edit first line to create js variable
   string[1] = str_c('var ', s$code_string, ' = ', string[1])
   str_c(string, collapse = '\n')
 }

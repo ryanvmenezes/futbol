@@ -4,7 +4,7 @@ var es = {
   "source": "https://fbref.com/en/comps/12/1652/2017-2018-La-Liga-Stats",
   "teams": 20,
   "cl": [1, 2, 3, 4],
-  "el": [2, 5, 6, 7],
+  "el": [5, 6, 7],
   "relegated": [18, 19, 20],
   "standings": [
     {

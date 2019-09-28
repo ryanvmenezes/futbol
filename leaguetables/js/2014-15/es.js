@@ -4,7 +4,7 @@ var es = {
   "source": "https://fbref.com/en/comps/12/755/2014-2015-La-Liga-Stats",
   "teams": 20,
   "cl": [1, 2, 3, 4, 5],
-  "el": [5, 6, 7],
+  "el": [6, 7],
   "relegated": [13, 19, 20],
   "standings": [
     {

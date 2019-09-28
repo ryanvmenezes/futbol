@@ -3,7 +3,7 @@ var it = {
   "code_string": "it",
   "source": "https://fbref.com/en/comps/11/41/1999-2000-Serie-A-Stats",
   "teams": 18,
-  "cl": [1, 2, 3, 4, 5],
+  "cl": [1, 2, 3, 4],
   "el": [5, 6, 7],
   "relegated": [15, 16, 17, 18],
   "standings": [

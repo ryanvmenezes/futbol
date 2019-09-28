@@ -4,7 +4,7 @@ var en = {
   "source": "https://fbref.com/en/comps/9/1526/2016-2017-Premier-League-Stats",
   "teams": 20,
   "cl": [1, 2, 3, 4, 6],
-  "el": [5, 6, 7],
+  "el": [5, 7],
   "relegated": [18, 19, 20],
   "standings": [
     {
