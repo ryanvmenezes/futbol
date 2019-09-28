@@ -11,7 +11,6 @@ leagues = tribble(
   'Serie A','it','https://fbref.com/en/comps/11/history/Serie-A-Seasons'
 )
 
-
 getorretrieve = function(url) {
   fname = url %>% 
     str_split('/') %>% 
@@ -69,7 +68,6 @@ parsed = sznshtml %>%
                     ~.x %>% 
                       filter(str_detect(Notes, 'Relegat')) %>% 
                       pull(Rk)),
-    # year = as.integer(str_sub(szn, end = 4)),
     szn = str_c(str_sub(szn, end = 5), str_sub(szn, start = -2))
   ) %>%
   select(szn, competition, code_string, source, teams, cl, el, relegated, standings)
@@ -99,11 +97,6 @@ js = parsed %>%
   select(-data)
 
 js
-# cat(js$outputjs[2])
-
-# szn = js$szn[5]
-# code2 = js$code2[5]
-# outputjs = js$outputjs[5]
 
 writejs <- function(szn, code2, outputjs) {
   outputdir = here('leaguetables', 'js', szn)
@@ -113,5 +106,4 @@ writejs <- function(szn, code2, outputjs) {
   cat(outputjs, file = outputfile)
 }
 
-# writejs(szn, code2, outputjs)
 pwalk(js, writejs)
