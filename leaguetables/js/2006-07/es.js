@@ -12,140 +12,140 @@ var es = {
       "name": "Real Madrid",
       "played": 38,
       "points": 76,
-      "difference": "26"
+      "difference": 26
     },
     {
       "position": 2,
       "name": "Barcelona",
       "played": 38,
       "points": 76,
-      "difference": "45"
+      "difference": 45
     },
     {
       "position": 3,
       "name": "Sevilla",
       "played": 38,
       "points": 71,
-      "difference": "29"
+      "difference": 29
     },
     {
       "position": 4,
       "name": "Valencia",
       "played": 38,
       "points": 66,
-      "difference": "15"
+      "difference": 15
     },
     {
       "position": 5,
       "name": "Villarreal",
       "played": 38,
       "points": 62,
-      "difference": "4"
+      "difference": 4
     },
     {
       "position": 6,
       "name": "Zaragoza",
       "played": 38,
       "points": 60,
-      "difference": "12"
+      "difference": 12
     },
     {
       "position": 7,
       "name": "Atlético Madrid",
       "played": 38,
       "points": 60,
-      "difference": "7"
+      "difference": 7
     },
     {
       "position": 8,
       "name": "Recreativo",
       "played": 38,
       "points": 54,
-      "difference": "2"
+      "difference": 2
     },
     {
       "position": 9,
       "name": "Getafe",
       "played": 38,
       "points": 52,
-      "difference": "6"
+      "difference": 6
     },
     {
       "position": 10,
       "name": "Racing Santander",
       "played": 38,
       "points": 50,
-      "difference": "-6"
+      "difference": -6
     },
     {
       "position": 11,
       "name": "Espanyol",
       "played": 38,
       "points": 49,
-      "difference": "-7"
+      "difference": -7
     },
     {
       "position": 12,
       "name": "Mallorca",
       "played": 38,
       "points": 49,
-      "difference": "-6"
+      "difference": -6
     },
     {
       "position": 13,
       "name": "Deportivo La Coruña",
       "played": 38,
       "points": 47,
-      "difference": "-13"
+      "difference": -13
     },
     {
       "position": 14,
       "name": "Osasuna",
       "played": 38,
       "points": 46,
-      "difference": "2"
+      "difference": 2
     },
     {
       "position": 15,
       "name": "Levante",
       "played": 38,
       "points": 42,
-      "difference": "-16"
+      "difference": -16
     },
     {
       "position": 16,
       "name": "Real Betis",
       "played": 38,
       "points": 40,
-      "difference": "-13"
+      "difference": -13
     },
     {
       "position": 17,
       "name": "Athletic Bilbao",
       "played": 38,
       "points": 40,
-      "difference": "-18"
+      "difference": -18
     },
     {
       "position": 18,
       "name": "Celta Vigo",
       "played": 38,
       "points": 39,
-      "difference": "-19"
+      "difference": -19
     },
     {
       "position": 19,
       "name": "Real Sociedad",
       "played": 38,
       "points": 35,
-      "difference": "-15"
+      "difference": -15
     },
     {
       "position": 20,
       "name": "Gimnàstic",
       "played": 38,
       "points": 28,
-      "difference": "-35"
+      "difference": -35
     }
   ]
 }
