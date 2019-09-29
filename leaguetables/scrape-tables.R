@@ -56,8 +56,7 @@ parsed = sznshtml %>%
     standings = map(table,
                     ~.x %>%
                       select(position = Rk, name = Squad, played = Apps,
-                             points = Pts, difference = GDiff) %>% 
-                      mutate(difference = as.character(difference))),
+                             points = Pts, difference = GDiff)),
     cl = map(table,
              ~.x %>% 
                filter(str_detect(Notes, 'UEFA Champions League')) %>% 
