@@ -12,7 +12,7 @@ getorretrieve = function(url, override = FALSE) {
     str_c(collapse = '') %>% 
     str_c('.html')
   
-  fpath = here('tv-ratings', 'ratings-post-index', fname)
+  fpath = here('ratings-post-index', fname)
   
   if (!override & file.exists(fpath)) {
     h = read_html(fpath)
@@ -26,6 +26,8 @@ getorretrieve = function(url, override = FALSE) {
 
 pages = tibble(indexpage = str_c('https://worldsoccertalk.com/category/tv-ratings/page/', 1:63, '/')) %>% 
   mutate(rawhtml = map(indexpage, getorretrieve))
+
+pages
 
 parsed = pages %>% 
   mutate(
@@ -50,13 +52,13 @@ parsed = pages %>%
     )
   )
 
-parsed %>% 
-  select(-indexpage, -rawhtml) %>% 
-  unnest(cols = c(title, link, postdate)) %>% 
-  filter(str_detect(title, 'Most-watched')) %>% 
-  View()
+parsed
 
-pages$rawhtml[[1]] %>% 
-  html_nodes('.latestPost .post-info .thetime') %>% 
-  html_text() %>% 
-  str_squish()
+posts = parsed %>% 
+  select(-indexpage, -rawhtml) %>% 
+  unnest(cols = c(title, link, postdate))
+
+posts
+
+posts %>% write_csv('posts.csv')
+
