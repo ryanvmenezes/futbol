@@ -3,15 +3,15 @@ library(rvest)
 library(lubridate)
 library(tidyverse)
 
-posts = read_csv('posts.csv')
+post.index = read_csv('posts.csv')
 
-posts
+post.index
 
-mw.posts = posts %>% 
+mw.post.index = post.index %>% 
   filter(str_detect(title, 'Most-watched')) %>% 
   arrange(desc(link))
 
-mw.posts
+mw.post.index
 
 getorretrieve = function(url, override = FALSE) {
   fname = url %>% 
@@ -32,12 +32,12 @@ getorretrieve = function(url, override = FALSE) {
   h
 }
 
-pages = mw.posts %>% 
+raw.pages = mw.post.index %>% 
   mutate(rawhtml = map(link, getorretrieve))
 
-pages
+raw.pages
 
-parsed = pages %>% 
+parsed.pages = raw.pages %>% 
   mutate(
     tbl = map(
       rawhtml,
@@ -57,18 +57,73 @@ parsed = pages %>%
   ) %>% 
   select(-link)
 
-parsed
+parsed.pages
 
-post17 = parsed %>% 
+complete.mw.pages = parsed.pages %>% 
   mutate(postdate = mdy(postdate)) %>% 
-  filter(postdate > ymd('2017-01-06')) %>% 
+  filter(postdate >= ymd('2016-11-10')) %>% 
   filter(str_detect(cnames, 'Compe'))
 
-post17
+complete.mw.pages
 
-post17 %>% count(cnames) %>% arrange(-n)
+date.range.parsing = complete.mw.pages %>% 
+  transmute(
+    title,
+    daterange = str_replace(title, 'Most-watched soccer games on US TV for (week of )?', ''),
+    daterange = case_when(
+      daterange == 'February 26 to March 4, 2019' ~ 'February 26-March 4, 2019',
+      daterange == 'December 26-January 7' ~ 'December 26-January 7, 2018',
+      daterange == 'December 6 to 12, 2016' ~ 'December 6-12, 2016',
+      TRUE ~ daterange
+    )
+  ) %>% 
+  extract(
+    col = daterange,
+    into = c('startmonth', 'startdate', 'endmonth', 'enddate', 'startyear'),
+    regex = '^(\\w*)\\s(\\d+)-([a-zA-Z]*\\s)?(\\d+),\\s(\\d+)',
+    remove = FALSE
+  ) %>% 
+  mutate(
+    endyear = startyear, 
+    startyear = case_when(
+      daterange == 'December 26-January 7, 2018' ~ '2017',
+      daterange == 'December 27-January 1, 2017' ~ '2016',
+      TRUE ~ endyear
+    ),
+    endmonth = case_when(
+      is.na(endmonth) ~ startmonth,
+      TRUE ~ endmonth
+    ),
+    endmonth = str_trim(endmonth)
+  ) %>% 
+  unite(
+    col = 'startmdy',
+    startmonth, startdate, startyear,
+    sep = ' ',
+    remove = FALSE
+  ) %>% 
+  unite(
+    col = 'endmdy',
+    endmonth, enddate, endyear,
+    sep = ' ',
+    remove = FALSE
+  ) %>% 
+  mutate(
+    rangestart = mdy(startmdy),
+    rangeend = mdy(endmdy)
+  )
 
-allgames = post17 %>% 
+date.range.parsing
+
+complete.mw.pages
+
+complete.mw.pages %>% count(cnames) %>% arrange(-n)
+
+allgames = complete.mw.pages %>% 
+  left_join(
+    date.range.parsing %>% 
+      select(title, rangestart, rangeend)
+  ) %>% 
   mutate(
     cleaneddf = map2(
       tbl,
@@ -116,9 +171,11 @@ allgames = post17 %>%
       }
     )
   ) %>% 
-  select(postdate, cleaneddf) %>% 
+  select(postdate, rangestart, rangeend, cleaneddf) %>% 
   unnest(cols = c(cleaneddf))
 
 allgames
 
 allgames %>% write_csv('ratings-uncleaned.csv')
+
+# allgames %>% distinct(gmdate) %>% View()
