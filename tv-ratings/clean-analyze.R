@@ -18,7 +18,11 @@ date.df = raw.ratings %>%
   ) %>% 
   unnest(cols = c(dates)) %>% 
   count(dates) %>% 
+  right_join(
+    tibble(dates = seq(min(.$dates), max(.$dates), by = '1 day'))
+  ) %>%
   mutate(
+    covered = !is.na(n),
     yrmo = floor_date(dates, unit = 'months'),
     yr = year(dates),
     mo = month(dates, label = TRUE),
@@ -29,7 +33,7 @@ date.df = raw.ratings %>%
   mutate(mowk = wk - min(wk) + 1)
 
 date.df %>% 
-  ggplot(aes(mowk, wd, fill = n)) +
+  ggplot(aes(mowk, wd, fill = covered)) +
   geom_tile(colour = 'white') +
   facet_grid(yr ~ mo) +
   theme_minimal()
