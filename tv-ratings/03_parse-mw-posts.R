@@ -1,39 +1,9 @@
-library(here)
 library(rvest)
 library(lubridate)
 library(tidyverse)
 
-post.index = read_csv('posts.csv')
-
-post.index
-
-mw.post.index = post.index %>% 
-  filter(str_detect(title, 'Most-watched')) %>% 
-  arrange(desc(link))
-
-mw.post.index
-
-getorretrieve = function(url, override = FALSE) {
-  fname = url %>% 
-    str_split('/') %>% 
-    `[[`(1) %>% 
-    `[`(length(.) - 1) %>%
-    str_c('.html')
-  
-  fpath = here::here('most-watched-index', fname)
-  
-  if (!override & file.exists(fpath)) {
-    h = read_html(fpath)
-  } else {
-    h = read_html(url)
-    write_html(h, fpath)
-  }
-  
-  h
-}
-
-raw.pages = mw.post.index %>% 
-  mutate(rawhtml = map(link, getorretrieve))
+raw.pages = read_csv('most-watched-posts.csv') %>% 
+  mutate(rawhtml = map(fname, ~read_html(here::here('most-watched-index', .x))))
 
 raw.pages
 
@@ -55,7 +25,7 @@ parsed.pages = raw.pages %>%
     dfc = map_int(tbl, ncol),
     cnames = map_chr(tbl, ~.x %>% names() %>% str_c(collapse = '|'))
   ) %>% 
-  select(-link)
+  select(-link, -fname)
 
 parsed.pages
 
@@ -135,13 +105,13 @@ allgames = complete.mw.pages %>%
             unite(network, TV1:TV2, sep = ' / ') %>% 
             select(gmrank = Rank, gmdate = Date, comp = Competition, teams = Teams, network, viewers = Total)
         }
-        if (.y == 'Rank|Date|Competition|Teams|TV1|Total') {
-          final = .x %>% 
-            select(gmrank = Rank, gmdate = Date, comp = Competition, teams = Teams, network = TV1, viewers = Total)
-        }
         if (.y == 'Rank|Date|Competition|Teams|Network|Total') {
           final = .x %>% 
             select(gmrank = Rank, gmdate = Date, comp = Competition, teams = Teams, network = Network, viewers = Total)
+        }
+        if (.y == 'Rank|Date|Competition|Teams|TV1|Total') {
+          final = .x %>% 
+            select(gmrank = Rank, gmdate = Date, comp = Competition, teams = Teams, network = TV1, viewers = Total)
         }
         if (.y == 'Rank|Home|Away|Competition|Date|TV1|TV2|Total') {
           final = .x %>% 
@@ -171,11 +141,78 @@ allgames = complete.mw.pages %>%
       }
     )
   ) %>% 
-  select(postdate, rangestart, rangeend, cleaneddf) %>% 
-  unnest(cols = c(cleaneddf))
+  select(postdate, rangestart, rangeend, cleaneddf)
+
+# check
+allgames %>% count(parsecols = map_int(cleaneddf, length))
+
+allgames = allgames %>% unnest(cols = c(cleaneddf))
+
+allgames
+
+# "glue" the game date to a date in the post range
+
+datesinranges = allgames %>%
+  distinct(rangestart, rangeend) %>% 
+  mutate(d = map2(rangestart, rangeend, ~tibble(dateinrange = seq(.x, .y, by = '1 day')))) %>% 
+  unnest(cols = c(d))
+
+datesinranges
+
+gmdates = allgames %>% 
+  distinct(rangestart, rangeend, gmdate) %>% 
+  separate(col = gmdate, into = c('mo', 'da', 'yr'), sep = '/', remove = FALSE) %>% 
+  mutate(
+    mo = parse_integer(mo),
+    da = parse_integer(da),
+    yr = parse_integer(str_c('20', yr))
+  )
+
+gmdates
+
+gmdates %>% nrow()
+
+datematches = gmdates %>% 
+  right_join(datesinranges) %>% 
+  mutate(
+    momatch = mo == month(dateinrange),
+    damatch = da == day(dateinrange)
+  )
+
+datematches
+
+# no matches
+datematches %>% 
+  group_by(rangestart, rangeend, gmdate) %>% 
+  summarise(dmatches = sum(damatch)) %>% 
+  filter(dmatches != 1)
+
+matcheddates = datematches %>% 
+  filter(momatch & damatch) %>% 
+  select(rangestart, rangeend, gmdate, gmdatedt = dateinrange) %>% 
+  right_join(gmdates) %>% 
+  select(-mo, -da, -yr) %>% 
+  mutate(
+    gmdatedt = case_when(
+      is.na(gmdatedt) ~ mdy(gmdate),
+      TRUE ~ gmdatedt
+    )
+  ) %>% 
+  mutate(
+    gmdatedt = case_when(
+      is.na(gmdatedt) & gmdate == '12/16' ~ make_date(2019, 12, 16),
+      is.na(gmdatedt) & gmdate == '9/4' ~ make_date(2018, 9, 4),
+      TRUE ~ gmdatedt
+    )
+  )
+
+matcheddates
+
+allgames = allgames %>% 
+  left_join(matcheddates) %>% 
+  mutate(gmdate = gmdatedt) %>% 
+  select(-gmdatedt)
 
 allgames
 
 allgames %>% write_csv('ratings-uncleaned.csv')
-
-# allgames %>% distinct(gmdate) %>% View()

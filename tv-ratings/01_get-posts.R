@@ -4,14 +4,16 @@ library(tidyverse)
 
 # url = 'https://worldsoccertalk.com/category/tv-ratings/page/63/'
 
-getorretrieve = function(url, override = FALSE) {
-  fname = url %>% 
+createfilename = function(url) {
+  url %>% 
     str_split('/') %>% 
     `[[`(1) %>% 
     `[`((length(.) - 2):(length(.) - 1)) %>% 
     str_c(collapse = '') %>% 
     str_c('.html')
-  
+}
+
+getorretrieve = function(url, fname, override = FALSE) {
   fpath = here('ratings-post-index', fname)
   
   if (!override & file.exists(fpath)) {
@@ -25,7 +27,11 @@ getorretrieve = function(url, override = FALSE) {
 }
 
 pages = tibble(indexpage = str_c('https://worldsoccertalk.com/category/tv-ratings/page/', 1:63, '/')) %>% 
-  mutate(rawhtml = map(indexpage, getorretrieve))
+  mutate(
+    fname = map_chr(indexpage, createfilename),
+    rawhtml = map2(indexpage, fname, getorretrieve)
+    # rawhtml = map2(indexpage, fname, getorretrieve, override = TRUE)
+  )
 
 pages
 
@@ -55,7 +61,7 @@ parsed = pages %>%
 parsed
 
 posts = parsed %>% 
-  select(-indexpage, -rawhtml) %>% 
+  select(-indexpage, -rawhtml, -fname) %>% 
   unnest(cols = c(title, link, postdate))
 
 posts

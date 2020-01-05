@@ -1,0 +1,189 @@
+comp,countgames,totalviewers,avgviewers,overallgroup,continent,country,clubcountry,womens,friendly
+Premier League,690,306996189,444922.013043478,europeanclub,europe,england,club,NA,NA
+World Cup,64,298065000,4657265.625,mworldcup18,world,intl,country,NA,NA
+Liga MX,454,234540000,516607.929515418,ligamx,namerica,mexico,club,NA,NA
+Gold Cup,56,94884000,1694357.14285714,NA,namerica,intl,country,NA,NA
+Women’s World Cup,43,87821000,2042348.8372093,wworldcup19,world,intl,country,x,NA
+MLS,257,69179500,269180.93385214,mls,namerica,usa,club,NA,NA
+Liga MX Apertura,168,68776000,409380.952380952,ligamx,namerica,mexico,club,NA,NA
+Int’l Friendly,59,64019000,1085067.79661017,NA,world,intl,country,NA,NA
+CONCACAF WCQ,24,46083000,1920125,NA,namerica,intl,country,NA,NA
+Liga MX Clausura,100,43120000,431200,ligamx,namerica,mexico,club,NA,NA
+Liga MX Liguilla,38,39123000,1029552.63157895,ligamx,namerica,mexico,club,NA,NA
+La Liga,221,38591720,174623.167420814,europeanclub,europe,spain,club,NA,NA
+Liga MX Apertura Liguilla,25,28068000,1122720,ligamx,namerica,mexico,club,NA,NA
+Copa America,26,27298000,1049923.07692308,NA,samerica,intl,country,NA,NA
+Confederations Cup,16,23556000,1472250,NA,world,intl,country,NA,NA
+Bundesliga,334,20556000,61544.9101796407,europeanclub,europe,germany,club,NA,NA
+Liga MX Clasura,32,13761000,430031.25,ligamx,namerica,mexico,club,NA,NA
+Liga MX Liguilla Final,6,12478000,2079666.66666667,ligamx,namerica,mexico,club,NA,NA
+CONCACAF Nations League,35,11556000,330171.428571429,NA,namerica,intl,country,NA,NA
+UEFA Champions League Group Stage,43,11492000,267255.813953488,europeanclub,europe,intl,club,NA,NA
+Copa MX,47,11156000,237361.70212766,ligamx,namerica,mexico,club,NA,NA
+FA Cup,43,11027000,256441.860465116,europeanclub,europe,england,club,NA,NA
+Liga MX Clausura Liguilla,12,10477000,873083.333333333,ligamx,namerica,mexico,club,NA,NA
+Int’l Champions Cup,38,9869000,259710.526315789,NA,world,intl,club,NA,x
+CONCACAF CL,23,9143000,397521.739130435,NA,namerica,intl,club,NA,NA
+UEFA Champions League,38,8531000,224500,europeanclub,europe,intl,club,NA,NA
+FIFA WWC,7,7508000,1072571.42857143,wworldcup19,world,intl,country,x,NA
+UCL Group Stage,30,7137000,237900,europeanclub,europe,intl,club,NA,NA
+Int’l Friendly (W),25,6706000,268240,otherwomens,world,intl,country,x,NA
+UEFA CL Final,2,6027000,3013500,europeanclub,europe,intl,club,NA,NA
+Champions League,20,5970000,298500,NA,other,other,other,NA,NA
+UEFA Nations League,31,5657000,182483.870967742,NA,europe,intl,country,NA,NA
+FIFA U17 World Cup,30,5531000,184366.666666667,NA,world,intl,country,NA,NA
+Friendly,34,5222000,153588.235294118,NA,world,intl,country,NA,NA
+CONMEBOL WCQ,17,5068000,298117.647058824,NA,samerica,intl,country,NA,NA
+MLS Cup,3,5038000,1679333.33333333,mls,namerica,usa,club,NA,NA
+UCL Semi-Final,4,4966000,1241500,europeanclub,europe,intl,club,NA,NA
+Liga MX Apertura Final,2,4695000,2347500,ligamx,namerica,mexico,club,NA,NA
+UEFA WCQ,31,4432000,142967.741935484,NA,europe,intl,country,NA,NA
+MLS Conference Semi-Final,14,4007000,286214.285714286,mls,namerica,usa,club,NA,NA
+Liga MX Clausura Final,2,3728000,1864000,ligamx,namerica,mexico,club,NA,NA
+UEFA Champions League RO16,8,3654000,456750,europeanclub,europe,intl,club,NA,NA
+SheBelieves Cup,8,3387000,423375,otherwomens,world,intl,country,x,NA
+Copa Del Rey,26,3156000,121384.615384615,europeanclub,europe,spain,club,NA,NA
+UEFA CL Group Stage,18,3151000,175055.555555556,europeanclub,europe,intl,club,NA,NA
+Copa del Rey,13,3086000,237384.615384615,europeanclub,europe,spain,club,NA,NA
+LaLiga,14,3045364,217526,europeanclub,europe,spain,club,NA,NA
+FIFA Club World Cup,17,3024000,177882.352941176,NA,world,intl,club,NA,NA
+UCL Final,1,2958000,2958000,europeanclub,europe,intl,club,NA,NA
+UCL Quarter-Final,6,2948000,491333.333333333,europeanclub,europe,intl,club,NA,NA
+MLS All Star Game,2,2851000,1425500,mls,namerica,usa,club,NA,NA
+UEFA CL,11,2814000,255818.181818182,europeanclub,europe,intl,club,NA,NA
+Tournament of Nations,6,2772000,462000,otherwomens,world,intl,country,x,NA
+Campeones Cup,2,2741000,1370500,ligamx,namerica,intl,club,NA,NA
+Leagues Cup,7,2729000,389857.142857143,NA,namerica,intl,club,NA,NA
+UEFA Euro Qualifying,25,2709000,108360,NA,europe,intl,country,NA,NA
+UEFA CL Quarter Finals,8,2664000,333000,europeanclub,europe,intl,club,NA,NA
+Serie A,68,2663000,39161.7647058823,europeanclub,europe,italy,club,NA,NA
+EPL,6,2548000,424666.666666667,europeanclub,europe,england,club,NA,NA
+UEFA Europa League Group Stage,35,2545000,72714.2857142857,europeanclub,europe,intl,club,NA,NA
+UEFA CL R16,6,2507000,417833.333333333,europeanclub,europe,intl,club,NA,NA
+NWSL,25,2422000,96880,NA,namerica,usa,club,NA,NA
+European Championship Qualifying,24,2409000,100375,NA,europe,intl,country,NA,NA
+MLS Conference Final,6,2314000,385666.666666667,mls,namerica,usa,club,NA,NA
+FA Cup Final,2,2197000,1098500,europeanclub,europe,england,club,NA,NA
+UEFA CL QF,6,2031000,338500,europeanclub,europe,intl,club,NA,NA
+UCL,11,2028000,184363.636363636,europeanclub,europe,intl,club,NA,NA
+UEFA Super Cup,3,2007000,669000,europeanclub,europe,intl,club,NA,NA
+UEFA CL Round of 16,8,1992000,249000,europeanclub,europe,intl,club,NA,NA
+FIFA U20 WC,15,1894000,126266.666666667,NA,world,intl,country,NA,NA
+SuperCopa MX,3,1826000,608666.666666667,ligamx,namerica,mexico,club,NA,NA
+Campeon de Campeones,2,1821000,910500,ligamx,namerica,mexico,club,NA,NA
+CONCACAF WWCQ,5,1783000,356600,otherwomens,namerica,intl,country,x,NA
+Liga MX Femenil,34,1684000,49529.4117647059,otherwomens,namerica,mexico,club,x,NA
+CONCACAF League,34,1638000,48176.4705882353,NA,namerica,intl,club,NA,NA
+Club World Cup,6,1601000,266833.333333333,NA,world,intl,club,NA,NA
+MLS Knockout Round,4,1563000,390750,mls,namerica,usa,club,NA,NA
+CCL Final,2,1540000,770000,NA,namerica,intl,club,NA,NA
+UEFA Nations League Final,1,1490000,1490000,NA,europe,intl,country,NA,NA
+FIFA U20 World Cup,8,1475000,184375,NA,world,intl,country,NA,NA
+MLS Knockout,4,1204000,301000,mls,namerica,usa,club,NA,NA
+MLS Cup Final,1,1107000,1107000,mls,namerica,usa,club,NA,NA
+Copa Libertadores Final,1,1100000,1100000,NA,samerica,intl,club,NA,NA
+UEFA CL Semi,2,1089000,544500,europeanclub,europe,intl,club,NA,NA
+MLS Playoffs,6,1065000,177500,mls,namerica,usa,club,NA,NA
+Copa Centroamericana,12,1055000,87916.6666666667,NA,namerica,intl,country,NA,NA
+UEFA EL,9,1053000,117000,europeanclub,europe,intl,club,NA,NA
+EFL Cup,4,1043000,260750,europeanclub,europe,england,club,NA,NA
+MLS Conf. SF,4,955000,238750,mls,namerica,usa,club,NA,NA
+CCL RO16,6,925000,154166.666666667,NA,namerica,intl,club,NA,NA
+DFL-Supercup,2,914000,457000,europeanclub,europe,germany,club,NA,NA
+UEFA Europa League,23,902000,39217.3913043478,europeanclub,europe,intl,club,NA,NA
+Europa League,17,900000,52941.1764705882,europeanclub,europe,intl,club,NA,NA
+Spanish Supercopa,2,885000,442500,europeanclub,europe,spain,club,NA,NA
+UEFA CL Semi Finals,2,859000,429500,europeanclub,europe,intl,club,NA,NA
+CCL Semi-Final,4,830000,207500,NA,namerica,intl,club,NA,NA
+MLS All-Star,1,808000,808000,mls,namerica,usa,club,NA,NA
+Ligue 1,20,778042,38902.1,europeanclub,europe,france,club,NA,NA
+UEL Quarter-Final,6,721000,120166.666666667,europeanclub,europe,intl,club,NA,NA
+UEL Group Stage,19,717000,37736.8421052632,europeanclub,europe,intl,club,NA,NA
+Champion League,3,705000,235000,europeanclub,europe,intl,club,NA,NA
+NA U20 Championship,5,685000,137000,NA,other,other,other,NA,NA
+UEL Final,1,684000,684000,europeanclub,europe,intl,club,NA,NA
+Copa MX Final,1,672000,672000,ligamx,namerica,mexico,club,NA,NA
+Europa League RO16,12,641000,53416.6666666667,europeanclub,europe,intl,club,NA,NA
+U20 World Cup,2,615000,307500,NA,world,intl,country,NA,NA
+MLS Eastern Championship,2,600000,300000,mls,namerica,usa,club,NA,NA
+UEL,9,596000,66222.2222222222,europeanclub,europe,intl,club,NA,NA
+MLS Western Championship,2,590000,295000,mls,namerica,usa,club,NA,NA
+U20 World Cup (W),20,566000,28300,otherwomens,other,other,other,x,NA
+UEL Semi-Final,4,550000,137500,europeanclub,europe,intl,club,NA,NA
+CCL RO8,3,548000,182666.666666667,NA,namerica,intl,club,NA,NA
+Copa Libertadores,3,540000,180000,NA,samerica,intl,club,NA,NA
+La LIga,2,533000,266500,europeanclub,europe,spain,club,NA,NA
+UEFA EL Final,2,513000,256500,europeanclub,europe,intl,club,NA,NA
+Primeira Liga,17,477000,28058.8235294118,europeanclub,europe,portugal,club,NA,NA
+UEFA EL Quarter Finals,4,473000,118250,europeanclub,europe,intl,club,NA,NA
+Manchester City Cup,11,467000,42454.5454545455,NA,other,other,other,NA,NA
+UEFA Euro (W),12,453000,37750,otherwomens,europe,intl,club,x,NA
+CNCAF U20 Champ.,4,442000,110500,NA,namerica,intl,country,NA,NA
+CONCACAF CL Final,1,437000,437000,NA,namerica,intl,club,NA,NA
+UEFA Euro Qual.,3,434000,144666.666666667,NA,europe,intl,country,NA,NA
+CONCACAF U20 Champ,6,428000,71333.3333333333,NA,namerica,intl,country,NA,NA
+Friendly (W),2,425000,212500,otherwomens,other,other,other,NA,NA
+Campeón de Campeones,1,419000,419000,ligamx,namerica,intl,club,NA,NA
+U21 EURO,4,419000,104750,NA,europe,intl,country,NA,NA
+UEFA EL Round of 16,6,418000,69666.6666666667,europeanclub,europe,intl,club,NA,NA
+Ascenso MX,1,390000,390000,NA,namerica,mexico,club,NA,NA
+Africa Cup of Nations,16,379000,23687.5,NA,africa,intl,country,NA,NA
+FIFA World Cup,1,370000,370000,NA,world,intl,country,NA,NA
+UEFA CL Playoff,2,336000,168000,europeanclub,europe,intl,club,NA,NA
+FA Community Shield,1,324000,324000,europeanclub,europe,england,club,NA,NA
+Open Cup,1,300000,300000,mls,namerica,usa,club,NA,NA
+US Open Cup,1,300000,300000,mls,namerica,usa,club,NA,NA
+MLS Conf Final,1,295000,295000,mls,namerica,usa,club,NA,NA
+Euro Qualifying,2,288000,144000,NA,europe,intl,country,NA,NA
+League Cup,4,281000,70250,europeanclub,europe,england,club,NA,NA
+NA U20 Champ,4,278000,69500,NA,namerica,intl,country,NA,NA
+NWSL Semi Final,2,257000,128500,NA,namerica,usa,club,x,NA
+"Copa Libertadores final, 1st leg",1,255000,255000,NA,samerica,intl,club,NA,NA
+Championship,18,249000,13833.3333333333,europeanclub,europe,england,club,NA,NA
+Int’l Friendy (W),1,221000,221000,otherwomens,world,intl,country,x,x
+UCL Playoff,8,197000,24625,europeanclub,europe,intl,club,NA,NA
+UEFA EL Semi Finals,1,195000,195000,europeanclub,europe,intl,club,NA,NA
+CNCAF U17 Champ.,1,186000,186000,NA,namerica,intl,country,NA,NA
+Liga MX Femenil Final,1,180000,180000,otherwomens,namerica,mexico,club,x,NA
+NCAA Soccer,2,178000,89000,NA,other,other,other,NA,NA
+Liga MX Feminil Final,1,178000,178000,NA,namerica,mexico,club,x,NA
+UEFA EL Semi,1,174000,174000,europeanclub,europe,intl,club,NA,NA
+NWSL Championship,1,166000,166000,otherwomens,namerica,usa,club,x,NA
+CONCACAF Nations League Q,2,166000,83000,NA,namerica,intl,country,NA,NA
+SuperCopa Argentina,1,149000,149000,NA,samerica,argentina,club,NA,NA
+UEFA EL Group Stage,3,147000,49000,europeanclub,europe,intl,club,NA,NA
+NA Beach Soccer,6,146000,24333.3333333333,NA,other,other,other,NA,NA
+Int’l Friendly (U23),1,140000,140000,NA,world,intl,country,NA,x
+US Open Cup Final,1,136000,136000,NA,namerica,usa,club,NA,NA
+MLS Homegrown Game,2,134000,67000,mls,namerica,usa,club,NA,NA
+Scottish Premiership,2,134000,67000,europeanclub,europe,scotland,club,NA,NA
+DFB Pokal,1,122000,122000,europeanclub,europe,germany,club,NA,NA
+UEFA U19 Championship,6,115000,19166.6666666667,NA,europe,intl,country,NA,NA
+Women’s ICC,1,114000,114000,NA,world,intl,country,x,NA
+EFL Championship,13,109000,8384.61538461538,europeanclub,europe,england,club,NA,NA
+UEFA U19 EURO,4,103000,25750,NA,europe,intl,country,NA,NA
+UEFA U17 Euro,7,99000,14142.8571428571,NA,europe,intl,country,NA,NA
+Coupe de la Ligue,2,99000,49500,europeanclub,europe,france,club,NA,NA
+Coppa Italia Final,1,98000,98000,europeanclub,europe,italy,club,NA,NA
+Audi Cup,4,95000,23750,NA,world,intl,club,NA,x
+Florida Cup,3,93000,31000,NA,other,other,other,NA,NA
+U21 Euro,1,84000,84000,NA,europe,intl,country,NA,NA
+DFL Pokal Final,1,79000,79000,europeanclub,europe,germany,club,NA,NA
+UEFA U17 Euro Final,1,79000,79000,NA,europe,intl,country,NA,NA
+CAF WCQ,3,69000,23000,NA,africa,africa,africa,NA,NA
+UEFA Futsal Euro,1,62000,62000,NA,europe,intl,country,NA,NA
+NCAA,2,60000,30000,NA,namerica,other,other,NA,NA
+Beach Soccer,2,57000,28500,NA,other,other,other,NA,NA
+CONCACAF U15,5,55000,11000,NA,namerica,intl,country,NA,NA
+Acenso MX,1,49000,49000,NA,namerica,mexico,club,NA,NA
+2. Bundesliga,1,45000,45000,europeanclub,europe,germany,club,NA,NA
+NASL,7,43000,6142.85714285714,NA,namerica,usa,club,NA,NA
+USL,2,38000,19000,NA,namerica,usa,club,NA,NA
+UEFA U19 Championship (W),2,34000,17000,otherwomens,europe,intl,country,x,NA
+Campeonato Carioca,1,27000,27000,NA,other,other,other,NA,NA
+Turkish Super League,1,25708,25708,europeanclub,europe,turkey,club,NA,NA
+Big East Soccer,1,22000,22000,NA,other,other,other,NA,NA
+Turkish Super Lig,1,21000,21000,europeanclub,europe,turkey,club,NA,NA
+Coupe de France,1,15000,15000,europeanclub,europe,france,club,NA,NA
+UEFA U17 Euro Final (W),1,14000,14000,otherwomens,europe,intl,country,x,NA
+Segunda Division,1,5000,5000,NA,namerica,mexico,club,NA,NA
